@@ -6,7 +6,7 @@ MYDIR="$(cd "$(dirname "$0")"; pwd -P)"
 
 source ci_support/setup_conda.sh
 
-conda install conda-build=3 -c defaults --yes --quiet
+conda install conda-build=3 -c defaults --yes
 
 export CPU_COUNT=2
 
@@ -15,4 +15,4 @@ conda list
 conda render recipes/eman
 conda build purge-all
 
-conda build recipes/eman -c cryoem/label/dev -c cryoem -c defaults -c conda-forge --quiet
+conda build recipes/eman -c cryoem/label/dev -c cryoem -c defaults -c conda-forge
